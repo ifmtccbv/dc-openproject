@@ -2,10 +2,25 @@ version: '3'
 
 services:
   openproject:
-    container_name: 'openproject_web'
+    container_name: 'openproject'
     image: 'openproject/community:8'
     restart: 'always'
     environment:
       - SECRET_KEY_BASE=secret
     ports:
-      - '8080:80'
+      - '80:80'
+    volumes:
+      - openproject_pgdata:/var/openproject/pgdata
+      - openproject_static:/var/openproject/assets
+    networks:
+      - openproject
+
+volumes:
+  openproject_pgdata:
+    driver: 'local'
+  openproject_static:
+    driver: 'local'
+
+networks:
+  openproject:
+    driver: 'bridge'

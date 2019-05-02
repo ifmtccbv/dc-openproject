@@ -3,11 +3,11 @@
 Iniciar:
 
 ```
-docker-compose -p openproject up -d
+docker-compose -p ifmt up -d
 ```
 
 Parar:
 
 ```
-docker-compose -p openproject down
+docker-compose -p ifmt down
 ```
