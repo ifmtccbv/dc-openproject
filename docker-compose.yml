@@ -5,15 +5,14 @@ services:
     container_name: 'openproject'
     image: 'openproject/community:8'
     restart: 'always'
-    environment:
-      - SECRET_KEY_BASE=secret
+    env_file:
+      - openproject.env
     ports:
       - '80:80'
     volumes:
       - openproject_pgdata:/var/openproject/pgdata
       - openproject_static:/var/openproject/assets
-    networks:
-      - openproject
+    network_mode: host
 
 volumes:
   openproject_pgdata:
