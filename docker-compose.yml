@@ -19,7 +19,3 @@ volumes:
     driver: 'local'
   openproject_static:
     driver: 'local'
-
-networks:
-  openproject:
-    driver: 'bridge'
