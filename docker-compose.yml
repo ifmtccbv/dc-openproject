@@ -12,10 +12,15 @@ services:
     volumes:
       - openproject_pgdata:/var/openproject/pgdata
       - openproject_static:/var/openproject/assets
-    network_mode: host
+    networks:
+      - openproject
 
 volumes:
   openproject_pgdata:
     driver: 'local'
   openproject_static:
     driver: 'local'
+
+networks:
+  openproject:
+    driver: 'bridge'
