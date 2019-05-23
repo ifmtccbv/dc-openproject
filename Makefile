@@ -1,4 +1,4 @@
-PROJECT := ifmt
+PROJECT := openproject
 
 restart: stop start
 
